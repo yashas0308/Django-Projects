@@ -1,2 +1,2 @@
 # Django-Projects
-4 Different Django Projects 2 based on Django Rest Framework API and 2 based on Web Application
+This Repository includes Django Projects made by me for testing and learning to build Web Applications and as well as for Django Rest Framework based API apps! 
