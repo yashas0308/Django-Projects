@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% static 'http://127.0.0.1:8000/' as ProdURL %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+</head>
+<body>
+    {%block content %}
+    <center>
+        <h1>000{{ object.id }}: Device Detials</h1>
+    </center>
+    {% endblock %}
+
+    {% block another_content %}
+    <style>
+        #btn:link, a:visited{
+            background-color: white;
+            border: 1px solid black;
+            color: black;
+            padding: 14px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+        #btn:hover{
+            background-color: black;
+            color: white;
+        }
+    </style>
+    <center>
+    {% if object.offers %}
+        <h2 style="background-color: yellow; color:black">SPECIAL OFFER 70% OFF</h2>
+    {% endif %}
+        <h2>Gadget: {{ object.name }}</h2>
+    {% if object.desc != None and object.desc != '' %}
+        <h3>Description:~ <br> {{ object.desc }}</h3>
+    {% else %}
+        <h3>Description Coming Soon...</h3>
+    {% endif %}
+        <h3>Price: ${{ object.price }}</h3><br><br>
+        <h3>
+            <a id="btn" href="{{ProdURL}}/viewset/product/{{object.id}}/">UPDATE PRODUCT DETAIL</a>
+        </h3>
+    </center>
+    {% endblock %}
+</body>
+</html>

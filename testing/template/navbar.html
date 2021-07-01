@@ -1,0 +1,14 @@
+{% load static %}
+{% static "http://127.0.0.1:8000" as "ProdURL" %}
+<nav>
+    <ul>
+        <li><a href="{{ProdURL}}/">Home</a></li>
+        <li><a href="{{ProdURL}}/about">About</a></li>
+        <li><a href="{{ProdURL}}/contact">Contact</a></li>
+        <li><a href="{{ProdURL}}/product/list/">Product List</a></li>
+        <li><a href="{{ProdURL}}/viewset/product/">Add Product</a></li>
+        <li><a href="{{ProdURL}}/viewset/product/id/">Edit Product</a></li>
+        <li><a href="{{ProdURL}}/register/">Register</a></li>
+        <li><a href="{{ProdURL}}/login/">Login</a></li>
+    </ul>
+</nav>

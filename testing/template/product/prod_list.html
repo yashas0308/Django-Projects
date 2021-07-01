@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% static "http://127.0.0.1:8000/" as "ProdURL" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+</head>
+<body>
+    {%block content %}
+    <center>
+        <h1>Product List Page </h1>
+        <p>[NOTE: Offers are Highlighted]</p>
+    </center>
+    {% endblock %}
+
+    {% block another_content %}
+    <style>
+        #btn:link, a:visited{
+            background-color: white;
+            border: 1px solid black;
+            color: black;
+            padding: 5px 300px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+        #btn:hover{
+            background-color: black;
+            color: white;
+        }
+    </style>
+    {% for instanace in object_list %}
+    <center>
+        {% if instanace.offers %}
+        <h2>
+            <a id="btn" href="{{ProdURL}}/product/{{ instanace.id }}/"><p style="color: red;">{{ instanace.id }} - {{instanace.name}}</p></a>
+        </h2>
+        {% else %}
+        <h2>
+            <a id="btn" href="{{ProdURL}}/product/{{ instanace.id }}/"><p>{{ instanace.id }} - {{instanace.name}}</p></a>
+        </h2>
+        {% endif %}
+    </center>
+    {% endfor %}
+    {% endblock %}
+</body>
+</html>

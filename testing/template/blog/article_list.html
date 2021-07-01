@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+{% for instanace in object_list %}
+    <ul>
+        <li><h1>{{ instanace.id }} - Title: {{ instanace.blogtitle }}</h1></li>
+        <li><p>Author: {{ instanace.blogauthor }}</p></li>
+        <li><p>Date: {{ instanace.publishdate }}</p></li>
+        <li><p>Category: {{ instanace.blogcategory }}</p></li>
+        <li><p>Content:</p><i><p>{{ instanace.blogcontent }}</p></i></li>
+    </ul>
+{% endfor %}
+
+{% endblock %}
