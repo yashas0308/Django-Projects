@@ -1,2 +1,6 @@
-# to change language of repo from Javascript to Python
-*.css linguist-language=Python
+*.css linguist-detectable=false
+*.js linguist-detectable=false
+*.scss linguist-detectable=false  
+*.less linguist-detectable=false
+*.py linguist-detectable=true 
+*.html linguist-detectable=false
