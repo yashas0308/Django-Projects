@@ -1,0 +1,20 @@
+{% extends 'contact/base.html' %}
+{% block content %}
+    <div class="card" style="width: 50rem;">
+        <ul class="list-group list-group-flush">
+            {% for person in persons %}
+                <div>
+                    <li class="list-group-item"><a href="{% url 'contact:contact_detail' person.id %}">{{ person.full_name }}</a></li>
+                </div>
+            {% endfor %}
+            {% if persons.has_previous %}
+            <a href="{% url 'contact:contact_list' %}?page=1">First</a>
+            <a href="{% url 'contact:contact_list' %}?page={{persons.previous_page_number}}">Previous Contacts</a>
+            {% endif %}
+
+            {% if persons.has_next %}
+            <a href="{% url 'contact:contact_list' %}?page={{persons.next_page_number}}">Next Contacts</a>
+            {% endif %}
+        </ul>
+    </div>
+{% endblock %}
