@@ -1,4 +1,0 @@
-{
-    "python.pythonPath": "/home/yashas/.virtualenvs/mynewproj/bin/python",
-    "python.formatting.provider": "black"
-}
